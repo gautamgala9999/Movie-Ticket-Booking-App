@@ -1,0 +1,50 @@
+{% extends 'base.html' %} 
+
+{% block title %}Profile Page{% endblock %} 
+{% block body %}
+<h2 align="left" class="card-header text-dark" style="padding-left: 150px">Hey {{ user.name }}</h2>
+<br><hr>
+<div style="padding-left: 200px">
+     <h2><b>My Bookings
+          <br></b></h2>
+          <table class="table">
+               <thead class="thead-dark">
+                    <tr><th>Ticket ID</th>
+                         <th>User ID</th>
+                         <th>Show ID</th>
+                         <th>Date Purchased</th></tr>
+               </thead>
+               {% for ticket in num_tickets %}
+               <tbody>
+                    <tr>
+                         <td>{{ticket.id}}</td>
+                         <td>{{ticket.user_id}}</td>
+                         <td>{{ticket.show_id}}</td>
+                         <td>{{ticket.date_purchased}}</td>
+                    </tr>
+               
+               {% endfor %}
+          </tbody>
+          </table>
+          
+     </div>
+<hr>
+<div style="padding-left: 200px">
+<h2><b>Profile
+     <br></b></h2>
+     <table class="table">
+          <thead class="thead-dark">
+               <tr><th colspan="2">Details</th></tr>
+               <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr><td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td></tr>             
+          </tbody>
+
+     </table>
+</div>
+{% endblock %}

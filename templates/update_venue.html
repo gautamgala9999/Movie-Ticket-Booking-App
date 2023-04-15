@@ -1,0 +1,54 @@
+{% extends 'base.html' %} 
+
+{% block title %}Update Venue{% endblock %} 
+{% block body %}
+
+<h2 style="padding-left: 200px"><b>Update Venue</b></h2>
+
+<form method="post">
+    <div class="form-group">
+        <div align="left" style="padding-left: 220px">
+        <label for="name">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            value="{{venue.name}}"
+            placeholder="Enter Show name"
+            maxlength="30"
+            style="width: 300px;text-align: left"
+            required
+            />
+        <label for="location">location</label>
+        <input
+            type="text"
+            class="form-control"
+            id="location"
+            name="location"
+            value="{{venue.location}}"
+            placeholder="Enter City of Venue"
+            maxlength="30"
+            style="width: 300px;text-align: left"
+            required
+            />
+        <label for="capacity">Capacity</label>
+        <input
+            type="number"
+            class="form-control"
+            id="capacity"
+            name="capacity"
+            value="{{venue.capacity}}"
+            placeholder="Enter Capacity"
+            maxlength="30"
+            style="width: 300px;text-align: left"
+            required
+            />
+        
+            <br>
+            <button class="btn btn-dark btn-lg">Update Venue</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

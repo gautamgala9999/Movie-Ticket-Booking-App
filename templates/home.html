@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+
+{% block title %}Enjoy your Day with nJoy{% endblock %} 
+{% block body %}
+
+    
+    <h5 align="left" class="card-header text-dark" style="padding-left: 200px">Hello, {{ current_user.name }}</h5>
+    <div align="center">
+        <img src="/static/showtime.jpg" alt="">
+    <br><br>
+    <br>
+    <h5 align="center" class="btn btn-outline-dark "><a href="{{ url_for('show_shows') }}">See all Shows</a></h5>
+    <br><br><br>
+    <h5 align="center" class="btn btn-outline-dark " ><a href="{{ url_for('show_venue') }}">See all Venue</a></h5>
+</div>
+{% endblock %}

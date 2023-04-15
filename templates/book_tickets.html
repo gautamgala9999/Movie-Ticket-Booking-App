@@ -1,0 +1,66 @@
+{% extends 'base.html' %} 
+
+{% block title %}Booking Tickets{% endblock %} 
+{% block body %}
+
+<h2 style="text-align: center;"><b>Booking Summary</b></h2>
+<br>
+
+
+<form method="post">
+    <div class="form-group">
+        <h2 style="padding-left: 200px"><b>Book Tickets</b></h2>
+        <div align="left" style="padding-left: 220px">
+        <label for="datetime">Showtime</label>
+        <input
+            type="datetime-local"
+            class="form-control"
+            id="datetime"
+            name="datetime"
+            value="{{show.datetime}}"
+            placeholder="Enter Time"
+            maxlength="35"
+            style="width: 300px;text-align: left"
+            required
+            readonly
+            disabled
+        />    
+        <br>
+        <label for="">Show</label><br>
+        <input
+        value="{{show.name}}"
+        maxlength="35"
+        style="width: 300px;text-align: left"
+        required
+        readonly
+        disabled
+    /> 
+<br>
+        <br>
+        <label for="">Venue</label><br>
+        <input
+        value="{{show.venue_id}}"
+        maxlength="35"
+        style="width: 300px;text-align: left"
+        required
+        readonly
+        disabled
+    /> 
+<br><br>
+        <label for="tickets">No. of Tickets</label>
+        <input
+            type="number"
+            class="form-control"
+            id="tickets"
+            name="tickets"
+            placeholder="Enter No. of tickets"
+            maxlength="35"
+            style="width: 300px;text-align: left"
+            required
+        />  
+            <br>
+            <button class="btn btn-dark btn-lg">Grab Now</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

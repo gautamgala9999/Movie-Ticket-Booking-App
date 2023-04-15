@@ -1,0 +1,81 @@
+{% extends 'base.html' %} 
+
+{% block title %}Delete Show{% endblock %} 
+{% block body %}
+
+<h2 style="padding-left: 200px"><b>Delete Show !?</b></h2>
+<form method="post">
+    <div class="form-group">
+        <div align="left" style="padding-left: 220px">
+        <label for="name">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter Show name"
+            maxlength="30"
+            style="width: 300px;text-align: left"
+            required
+        />
+        <label for="desc">Description</label>
+        <input
+            type="text"
+            class="form-control"
+            id="desc"
+            name="desc"
+            placeholder="Enter Show Description"
+            maxlength="30"
+            style="width: 300px;text-align: left"
+            required
+        />
+        <label for="rating">Rating</label>
+        <select style="width: 300px;text-align: left" id="tag"  class="form-control"  name="tag" required>
+            <option value="UA">U/A</option>
+            <option value="Adult">Adult</option>
+            <option value="Universal">Universal</option>
+        </select>
+        
+        <label style="padding-top: 10px" for="tag">Tag</label>
+                        <select style="width: 300px;text-align: left" id="tag"  class="form-control"  name="tag" required>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Action">Action</option>
+                        </select>
+
+        <label for="datetime">Showtime</label>
+        <input
+            type="datetime-local"
+            class="form-control"
+            id="datetime"
+            name="datetime"
+            placeholder="Enter Time"
+            maxlength="35"
+            style="width: 300px;text-align: left"
+            required
+        />    
+
+        <label for="price">Price</label>
+        <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            placeholder="Enter Price per ticket"
+            maxlength="35"
+            style="width: 300px;text-align: left"
+            required
+        />  
+
+            <br>
+            <button class="btn btn-dark btn-lg">Sign Up</button>
+
+        </div>
+
+
+    </div>
+</form>
+
+
+{% endblock %}

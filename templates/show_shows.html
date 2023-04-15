@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+
+{% block title %}All Shows{% endblock %} 
+{% block body %}
+
+<h2 style="padding-left: 200px"><b>Shows</b></h2>
+<br>
+<div class="container emp-profile shadow-lg" style="padding-top: 30px">
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Tag</th>
+          <th scope="col">Date-Time</th>
+          <th scope="col">Venue</th>
+          <th scope="col" style="text-align: center;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for show in shows %}
+        <tr>
+            {% set s_id=show.id %}
+          <td> <a href="{{ url_for('book_tickets',show_id=s_id) }}"> {{ show.name }} </a></td>
+          <td>{{ show.description }}</td>
+          <td>{{ show.rating }}</td>
+          <td>{{ show.tag }}</td>
+          <td>{{ show.datetime }}</td>
+          <td>{{ show.venue_id }}</td>
+          <td>
+          
+          <div align="center">
+          <a class="btn btn-outline-dark" href="{{ url_for('create_shows') }}" >
+          <b>Add Show</b></a>
+          <a class="btn btn-outline-dark" href="{{ url_for('update_shows',show_id=s_id) }}">
+          <b>Edit Show</b></a>
+          <a class="btn btn-outline-dark" href="{{ url_for('delete_shows',show_id=s_id) }}">
+          <b>Remove Show</b></a>
+          
+          </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div align="'center" style="padding-left: 20px ">
+    <!-- <a class="btn btn-dark btn-lg" href="{{ url_for('create_shows') }}"  >Create Show</a> -->
+  </div>
+
+{% endblock %}

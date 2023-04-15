@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+
+{% block title %}Admin Login{% endblock %} 
+{% block body %}
+
+<h2 style="padding-left: 200px"><b>Admin Panel</b></h2>
+<br>
+<div class="container emp-profile shadow-lg" style="padding-top: 30px">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+        <th scope="col" style="text-align: center;"><h3>Manage Shows</h3></th>
+        <th scope="col" style="text-align: center;"><h3>Manage Venues</h3></th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center;">
+        <tr>
+          
+          <td> <a class="btn btn-dark" href="{{ url_for('create_shows') }}" style="text-align: center;"><b>Add new Show</b></a></td>
+          <td> <a class="btn btn-dark" href="{{ url_for('create_venue') }}" style="text-align: center;"><b>Add new Venue</b></a></td>
+        </tr>
+        
+        <tr>
+            <td> <a class="btn btn-dark" href="{{ url_for('show_shows') }}" style="text-align: center;"><b>See All Show</b></a></td>
+            <td> <a class="btn btn-dark" href="{{ url_for('show_venue') }}" style="text-align: center;"><b>See all Venue</b></a></td>
+        </tr>
+       
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+{% endblock %}
